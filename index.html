@@ -1,0 +1,814 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sravan Sanathanam | Multi-omics & Bioinformatics</title>
+  <meta name="description" content="Sravan Sanathanam — PhD Student, Plant Molecular Biology | Multi-omics & Bioinformatics | Alabama A&M University." />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --text:#e9eefc;
+      --muted:#b7c3e6;
+      --accent:#7aa2ff;
+      --accent2:#7affd0;
+      --border: rgba(255,255,255,.10);
+      --card: rgba(255,255,255,.04);
+      --card2: rgba(255,255,255,.03);
+      --shadow: 0 14px 34px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1120px;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      line-height:1.55;
+      background:
+        radial-gradient(900px 600px at 12% 10%, rgba(122,162,255,.22), transparent 55%),
+        radial-gradient(900px 600px at 90% 18%, rgba(122,255,208,.14), transparent 55%),
+        var(--bg);
+    }
+    a{ color:var(--accent); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding: 0 18px; }
+    header{ padding: 44px 0 14px; }
+    .top{
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 18px; flex-wrap:wrap;
+    }
+    .brand{ display:flex; align-items:center; gap:14px; min-width: 260px; }
+    .avatar{
+      width:72px; height:72px; border-radius:18px; overflow:hidden;
+      background: linear-gradient(135deg, rgba(122,162,255,.9), rgba(122,255,208,.7));
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      flex:0 0 auto;
+    }
+    .avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
+    h1{ margin:0; font-size:26px; letter-spacing:.2px; }
+    .headline{ margin:5px 0 0; font-size:14px; color:var(--muted); }
+    .subline{ margin:6px 0 0; font-size:12px; color:var(--muted); }
+
+    nav{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+    .pill{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 9px 12px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      border-radius:999px;
+      color:var(--text);
+      font-size:14px;
+    }
+    .pill:hover{ text-decoration:none; background: rgba(255,255,255,.07); }
+    main{ padding: 10px 0 70px; }
+
+    .grid{ display:grid; grid-template-columns: 1.25fr .75fr; gap:16px; }
+    @media (max-width: 980px){ .grid{ grid-template-columns: 1fr; } }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+    .card h2{
+      margin:0 0 10px;
+      font-size:16px;
+      letter-spacing:.2px;
+    }
+    .muted{ color:var(--muted); }
+    .cta{ display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(122,162,255,.18);
+      color: var(--text);
+      font-weight: 800;
+    }
+    .btn.secondary{ background: rgba(255,255,255,.04); }
+    .btn:hover{ text-decoration:none; filter: brightness(1.05); }
+
+    .kvs{ display:grid; grid-template-columns: 130px 1fr; gap: 8px 12px; }
+    @media (max-width: 520px){ .kvs{ grid-template-columns: 1fr; } }
+    .kvs .k{ font-weight:800; color: var(--text); }
+    .kvs .v{ color: var(--muted); }
+
+    .section{
+      display:grid;
+      gap:16px;
+      margin-top: 16px;
+    }
+
+    .chips{ display:flex; gap:8px; flex-wrap:wrap; margin-top: 10px; }
+    .chip{
+      display:inline-flex; align-items:center;
+      padding: 5px 10px;
+      font-size: 12px;
+      color: var(--text);
+      border-radius: 999px;
+      border: 1px solid rgba(122,255,208,.20);
+      background: rgba(122,255,208,.10);
+    }
+
+    .projects-grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    @media (max-width: 980px){ .projects-grid{ grid-template-columns: 1fr; } }
+
+    .proj{
+      border:1px solid var(--border);
+      background: var(--card2);
+      border-radius: 16px;
+      overflow:hidden;
+    }
+    .proj img{
+      width:100%;
+      height: 180px;
+      object-fit: cover;
+      display:block;
+      background: rgba(0,0,0,.20);
+    }
+    .proj-body{ padding: 14px; }
+    .proj-title{ margin:0 0 6px; font-weight: 900; }
+    .proj-desc{ margin:0 0 10px; font-size: 14px; color: var(--muted); }
+    .proj-links a{ margin-right: 10px; font-weight: 900; }
+
+    .items{ display:grid; gap: 10px; }
+    .item{
+      padding: 12px 12px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: rgba(255,255,255,.03);
+    }
+    .item-top{
+      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
+      align-items:baseline;
+    }
+    .item-title{ font-weight: 900; }
+    .item-meta{ color: var(--muted); font-size: 13px; }
+
+    .row{
+      display:flex; gap: 10px; flex-wrap:wrap; align-items:center;
+      margin-top: 10px;
+    }
+    .tag{
+      display:inline-flex; align-items:center;
+      padding: 4px 9px;
+      font-size: 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+    }
+
+    .small{ font-size: 12px; color: var(--muted); }
+    .divider{ height:1px; background: var(--border); margin: 12px 0; }
+
+    footer{
+      padding: 18px;
+      text-align:center;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--border);
+      background: rgba(0,0,0,.15);
+    }
+
+    /* Print-friendly */
+    @media print{
+      body{ background: white; color: #111; }
+      a{ color:#111; text-decoration:none; }
+      .pill, .btn{ display:none !important; }
+      .card{ box-shadow:none; background:white; border:1px solid #ddd; }
+      footer{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="wrap">
+    <div class="top">
+      <div class="brand">
+        <div class="avatar" id="avatarBox" aria-hidden="true"></div>
+        <div>
+          <h1 id="name"></h1>
+          <div class="headline" id="headline"></div>
+          <div class="subline" id="subline"></div>
+        </div>
+      </div>
+
+      <nav>
+        <a class="pill" href="#about">About</a>
+        <a class="pill" href="#projects">Projects</a>
+        <a class="pill" href="#experience">Experience</a>
+        <a class="pill" href="#publications">Publications</a>
+        <a class="pill" href="#abstracts">Conference Abstracts</a>
+        <a class="pill" href="#memberships">Memberships</a>
+        <a class="pill" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap grid">
+    <!-- LEFT COLUMN -->
+    <div class="section">
+      <section class="card" id="about">
+        <h2>About</h2>
+        <p class="muted" id="aboutText"></p>
+        <div class="cta" id="cta"></div>
+
+        <div class="divider"></div>
+
+        <div>
+          <div class="item-title">Core areas</div>
+          <div class="chips" id="focusChips"></div>
+        </div>
+      </section>
+
+      <section class="card" id="projects">
+        <h2>Selected projects</h2>
+        <div class="projects-grid" id="projectsGrid"></div>
+        <p class="small" style="margin-top:12px;">
+          Upload images to <strong>assets/images/</strong>, PDFs to <strong>assets/</strong>, then update the paths in the SITE object.
+        </p>
+      </section>
+
+      <section class="card" id="experience">
+        <h2>Experience</h2>
+        <div class="items" id="expItems"></div>
+      </section>
+
+      <section class="card" id="publications">
+        <h2>Publications</h2>
+        <div class="items" id="pubItems"></div>
+      </section>
+
+      <section class="card" id="abstracts">
+        <h2>Conference abstracts</h2>
+        <div class="items" id="absItems"></div>
+        <p class="small" style="margin-top:12px;">
+          Paste your abstracts into the <strong>SITE.abstracts</strong> list (title, conference, year, link/PDF).
+        </p>
+      </section>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="section">
+      <aside class="card">
+        <h2>Quick info</h2>
+        <div class="kvs" id="quickInfo"></div>
+        <div class="divider"></div>
+        <div class="small" id="updated"></div>
+      </aside>
+
+      <aside class="card" id="education">
+        <h2>Education</h2>
+        <div class="items" id="eduItems"></div>
+      </aside>
+
+      <aside class="card" id="skills">
+        <h2>Skills</h2>
+        <div class="chips" id="skillChips"></div>
+      </aside>
+
+      <aside class="card" id="languages">
+        <h2>Languages</h2>
+        <div class="chips" id="languageChips"></div>
+      </aside>
+
+      <aside class="card" id="memberships">
+        <h2>Memberships</h2>
+        <div class="items" id="membershipItems"></div>
+      </aside>
+
+      <aside class="card" id="contact">
+        <h2>Contact</h2>
+        <p class="muted" id="contactNote"></p>
+        <div class="items" id="contactBlocks"></div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    © <span id="year"></span> <span id="name2"></span>
+  </footer>
+
+  <script>
+    /**
+     * ✅ EDIT THIS ONE OBJECT ONLY
+     * Add publications, conference abstracts, memberships, projects, etc. here.
+     */
+    const SITE = {
+      // Identity
+      name: "Sravan Sanathanam",
+      pronouns: "He/Him",
+      headline: "PhD Student, Plant Molecular Biology | Multi-omics and Bioinformatics | Alabama A&M University",
+
+      // From your LinkedIn export: location + email + phone + skills + languages + education :contentReference[oaicite:3]{index=3}
+      location: "Huntsville, Alabama, United States",
+      phone: "2564688340",
+      emailPrimary: "sravan.sanathanam@gmail.com",
+
+      // From your ORCID record: ORCID + emails + Scopus ID :contentReference[oaicite:4]{index=4}
+      orcid: "0009-0002-8192-8400",
+      orcidUrl: "https://orcid.org/0009-0002-8192-8400",
+      scopusAuthorId: "60076805900",
+      scopusUrl: "http://www.scopus.com/inward/authorDetails.url?authorID=60076805900&partnerID=MN8TOARS",
+
+      updated: "Updated: Jan 2026",
+
+      // Optional avatar
+      avatarImage: "assets/images/profile.jpg",
+
+      links: [
+        { label: "LinkedIn", url: "https://www.linkedin.com/in/sravan-sanathanam/", primary: true },
+        { label: "ORCID", url: "https://orcid.org/0009-0002-8192-8400" },
+        { label: "Scopus", url: "http://www.scopus.com/inward/authorDetails.url?authorID=60076805900&partnerID=MN8TOARS" },
+        { label: "CV (PDF)", url: "assets/Sravan_CV.pdf" },
+        { label: "dot.cards", url: "https://dot.cards/sravan" }
+      ],
+
+      about:
+        "I am a PhD researcher in Plant Molecular Biology at Alabama A&M University with a background in agronomy, genomics, and bioinformatics. My work focuses on multi-omics analysis and molecular approaches to understand stress-responsive mechanisms in crop systems. I build reproducible workflows and translate molecular outputs into clear biological interpretation for research and applied agriculture.",
+
+      focus: [
+        "Multi-omics",
+        "Bioinformatics",
+        "Next Generation Sequencing",
+        "Real-Time PCR (qPCR)",
+        "Nucleic Acid Extraction"
+      ],
+
+      // Curated, not exhaustive. Replace with your real links and images.
+      projects: [
+        {
+          title: "Comparative Transcriptome Analysis (RNA-seq)",
+          desc: "Differential expression and functional interpretation for stress-responsive mechanisms in crop systems.",
+          image: "assets/images/rnaseq-plot.png",
+          links: [
+            { label: "Poster (PDF)", url: "#" },
+            { label: "Workflow", url: "#" }
+          ],
+          tags: ["RNA-seq", "DEG", "Functional enrichment"]
+        },
+        {
+          title: "Comparative Methylome Analysis (BS-seq)",
+          desc: "Genome-wide DNA methylation profiling and DMR analysis integrated with transcriptome patterns.",
+          image: "assets/images/methylome-workflow.png",
+          links: [
+            { label: "Pipeline", url: "#" }
+          ],
+          tags: ["BS-seq", "DMR", "Epigenetics"]
+        }
+      ],
+
+      // Experience from LinkedIn export :contentReference[oaicite:5]{index=5}
+      experience: [
+        {
+          title: "Graduate Research Assistant (PhD in Plant Molecular Biology, Genomics and Bioinformatics)",
+          org: "Alabama Agricultural and Mechanical University",
+          location: "Huntsville, Alabama, United States",
+          dates: "Jan 2025 – Present",
+          bullets: [
+            "Real-Time Polymerase Chain Reaction (qPCR) and nucleic acid extraction"
+          ],
+          tags: ["qPCR", "Nucleic Acid Extraction"]
+        },
+        {
+          title: "Graduate Research Assistant (M.S. in Agronomy)",
+          org: "Alabama Agricultural and Mechanical University",
+          location: "Huntsville, Alabama, United States",
+          dates: "Aug 2022 – Dec 2024",
+          bullets: [
+            "Graduate research assistantship supporting agronomy research projects (add your strongest 3–5 bullets here)."
+          ],
+          tags: ["Agronomy"]
+        },
+        {
+          title: "Agricultural Experiential Learning Programme (AELP) — Certified seed production in paddy and seed quality testing",
+          org: "PJTSAU (Seed Research and Technology Center)",
+          location: "Hyderabad, Telangana, India",
+          dates: "Dec 2019 – May 2020",
+          bullets: [
+            "Supervised quality seed production of rice variety KNM–118",
+            "Maintained varietal purity in rice variety KNM–118",
+            "Maintained seed lot standards (rice, soybean, chickpea) using tetrazolium tests, physical purity, moisture testing, germination testing, and field emergence testing"
+          ],
+          tags: ["Seed quality", "Seed testing"]
+        },
+        {
+          title: "Agricultural Industrial Attachment (Internship)",
+          org: "Varsha Bioscience and Technology Private Limited",
+          location: "Choutuppal, Telangana, India",
+          dates: "Nov 2019 – Dec 2019",
+          bullets: [
+            "Mass production of biocontrol agents (Trichoderma viridae, Pseudomonas fluorescens, Bacillus thuringiensis, Azospirillum lipoferum, VAM)",
+            "Maintenance of pure cultures and operation of basic microbiology/plant pathology equipment",
+            "Completed a 30-day farm-level project on Trichoderma viridae growth on vermicompost (team of 3)"
+          ],
+          tags: ["Microbiology", "Biocontrol"]
+        },
+        {
+          title: "Rural Agricultural Work Experience Program (RAWEP)",
+          org: "PJTSAU",
+          location: "Sangareddy, Telangana, India",
+          dates: "Jul 2019 – Oct 2019",
+          bullets: [
+            "Conducted field diagnostic surveys to identify pests and diseases of rice, maize, cotton, and millets",
+            "Recommended integrated pest management practices to farmers",
+            "Organized farmer–scientist interactions and method demonstrations on integrated crop management practices"
+          ],
+          tags: ["Field diagnostics", "IPM"]
+        }
+      ],
+
+      // Education from LinkedIn export :contentReference[oaicite:6]{index=6}
+      education: [
+        {
+          title: "Doctor of Philosophy (PhD), Plant Molecular Biology, Genomics and Bioinformatics",
+          org: "Alabama Agricultural and Mechanical University",
+          dates: "Jan 2025 – Present"
+        },
+        {
+          title: "Master of Science (MS), Agronomy and Crop Science",
+          org: "Alabama Agricultural and Mechanical University",
+          dates: "Aug 2022 – Dec 2024"
+        },
+        {
+          title: "Bachelor of Science (BS), Agriculture, General",
+          org: "Professor Jayashankar Telangana State Agricultural University",
+          dates: "Oct 2016 – May 2020"
+        }
+      ],
+
+      // Top skills from LinkedIn export :contentReference[oaicite:7]{index=7}
+      skills: [
+        "Nucleic Acid Extraction",
+        "Real-Time Polymerase Chain Reaction (qPCR)",
+        "Next Generation Sequencing"
+      ],
+
+      // Languages from LinkedIn export :contentReference[oaicite:8]{index=8}
+      languages: [
+        "Telugu (Native or Bilingual)",
+        "English (Full Professional)",
+        "Hindi (Full Professional)"
+      ],
+
+      // Publications from ORCID works list :contentReference[oaicite:9]{index=9}
+      publications: [
+        {
+          title: "Low-Temperature Plasma: A Green Technology for Improving Crop Productivity and Seed Safety",
+          venue: "Global Journal of Agricultural and Allied Sciences",
+          year: "2025",
+          doi: "10.35251/gjaas.2025.007",
+          url: "https://doi.org/10.35251/gjaas.2025.007"
+        },
+        {
+          title: "Effects of biopolymers, cork, and Rhizobium tropici-derived extracellular polymeric substances on soil microbial communities",
+          venue: "Frontiers in Microbiomes",
+          year: "2025",
+          doi: "10.3389/frmbi.2025.1614472",
+          url: "https://doi.org/10.3389/frmbi.2025.1614472"
+        },
+        {
+          title: "Physiological and Biochemical Responses of Turmeric (Curcuma longa L.) Under Drought Stress",
+          venue: "Journal / Repository record",
+          year: "2024",
+          doi: "10.7275/jmap.2315",
+          url: "https://doi.org/10.7275/jmap.2315"
+        },
+        {
+          title: "Effects of Low-Temperature Plasma on Seed Germination, Seedling Growth, and Drought Tolerance of Mustard Greens",
+          venue: "HortScience",
+          year: "2023",
+          url: "#"
+        },
+        {
+          title: "Variation in Growth, Yield, and Curcumin Content of Turmeric (Curcuma longa) Genotypes Grown in North Alabama",
+          venue: "HortScience",
+          year: "2023",
+          url: "#"
+        }
+      ],
+
+      // Paste your conference abstracts here (title, conference, year, link or PDF)
+      abstracts: [
+        // Example:
+        // { title: "Abstract title", venue: "Conference name", year: "2025", url: "assets/abstracts/your-abstract.pdf" }
+      ],
+
+      // Memberships you provided (plus dates)
+      memberships: [
+        {
+          title: "The American Society of Plant Biologists (ASPB)",
+          meta: "Member",
+          dates: "Jan 2026 – Present",
+          url: "https://aspb.org/"
+        },
+        {
+          title: "International Society for Computational Biology (ISCB)",
+          meta: "Member",
+          dates: "Jun 2025 – Present",
+          url: "https://www.iscb.org/"
+        },
+        {
+          title: "The American Society for Biochemistry and Molecular Biology (ASBMB)",
+          meta: "Member",
+          dates: "Jun 2025 – Present",
+          url: "https://www.asbmb.org/"
+        },
+        {
+          title: "Science Societies (ASA, CSSA, SSSA)",
+          meta: "Member",
+          dates: "Jan 2024 – Present",
+          url: "https://www.agronomy.org/"
+        }
+      ],
+
+      contact: {
+        note: "For collaborations or research inquiries, share a short summary of the idea and what you want to achieve.",
+        email: "sravan.sanathanam@gmail.com",
+        phone: "2564688340",
+        location: "Huntsville, Alabama, USA"
+      }
+    };
+
+    // ---------- Rendering ----------
+    const el = (id) => document.getElementById(id);
+    const safeLink = (u) => (typeof u === "string" && u.trim().length) ? u.trim() : "#";
+
+    // Header
+    el("name").textContent = SITE.name;
+    el("name2").textContent = SITE.name;
+    el("headline").textContent = SITE.headline;
+    el("subline").textContent = SITE.pronouns ? SITE.pronouns : "";
+    el("updated").textContent = SITE.updated || "";
+    el("year").textContent = new Date().getFullYear();
+
+    // Avatar
+    const avatarBox = el("avatarBox");
+    if (SITE.avatarImage){
+      const img = new Image();
+      img.onload = () => { avatarBox.innerHTML = ""; avatarBox.appendChild(img); };
+      img.onerror = () => {};
+      img.src = SITE.avatarImage;
+      img.alt = SITE.name;
+    }
+
+    // About
+    el("aboutText").textContent = SITE.about;
+
+    // CTA
+    const cta = el("cta");
+    (SITE.links || []).forEach((b) => {
+      const a = document.createElement("a");
+      a.className = "btn" + (b.primary ? "" : " secondary");
+      a.href = safeLink(b.url);
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = b.label;
+      cta.appendChild(a);
+    });
+
+    // Focus chips
+    const focusChips = el("focusChips");
+    (SITE.focus || []).forEach(t => {
+      const s = document.createElement("span");
+      s.className = "chip";
+      s.textContent = t;
+      focusChips.appendChild(s);
+    });
+
+    // Quick info
+    const qi = el("quickInfo");
+    const quickRows = [
+      ["Location", SITE.location || ""],
+      ["Email", SITE.emailPrimary || ""],
+      ["ORCID", SITE.orcid || ""],
+      ["Scopus Author ID", SITE.scopusAuthorId || ""]
+    ];
+    quickRows.forEach(([k, v]) => {
+      const kDiv = document.createElement("div");
+      kDiv.className = "k";
+      kDiv.textContent = k;
+      const vDiv = document.createElement("div");
+      vDiv.className = "v";
+      vDiv.textContent = v;
+      qi.appendChild(kDiv);
+      qi.appendChild(vDiv);
+    });
+
+    // Projects
+    const pg = el("projectsGrid");
+    (SITE.projects || []).forEach(p => {
+      const card = document.createElement("div");
+      card.className = "proj";
+
+      const img = document.createElement("img");
+      img.src = p.image || "";
+      img.alt = p.title || "Project image";
+
+      const body = document.createElement("div");
+      body.className = "proj-body";
+
+      const title = document.createElement("p");
+      title.className = "proj-title";
+      title.textContent = p.title || "";
+
+      const desc = document.createElement("p");
+      desc.className = "proj-desc";
+      desc.textContent = p.desc || "";
+
+      const links = document.createElement("div");
+      links.className = "proj-links";
+      (p.links || []).forEach(l => {
+        const a = document.createElement("a");
+        a.href = safeLink(l.url);
+        a.target = "_blank";
+        a.rel = "noopener";
+        a.textContent = l.label || "Link";
+        links.appendChild(a);
+      });
+
+      const tagsRow = document.createElement("div");
+      tagsRow.className = "row";
+      (p.tags || []).forEach(t => {
+        const s = document.createElement("span");
+        s.className = "tag";
+        s.textContent = t;
+        tagsRow.appendChild(s);
+      });
+
+      body.appendChild(title);
+      body.appendChild(desc);
+      if ((p.links || []).length) body.appendChild(links);
+      if ((p.tags || []).length) body.appendChild(tagsRow);
+
+      card.appendChild(img);
+      card.appendChild(body);
+      pg.appendChild(card);
+    });
+
+    // Experience
+    const exp = el("expItems");
+    (SITE.experience || []).forEach(e => {
+      const d = document.createElement("div");
+      d.className = "item";
+
+      const bullets = (e.bullets || []).map(b => `<li>${b}</li>`).join("");
+      const tags = (e.tags || []).map(t => `<span class="tag">${t}</span>`).join("");
+
+      d.innerHTML = `
+        <div class="item-top">
+          <div class="item-title">${e.title || ""}</div>
+          <div class="item-meta">${e.dates || ""}</div>
+        </div>
+        <div class="muted" style="margin-top:4px;">
+          ${e.org || ""}${e.location ? " · " + e.location : ""}
+        </div>
+        ${bullets ? `<ul class="muted" style="margin:10px 0 0; padding-left:18px;">${bullets}</ul>` : ""}
+        ${tags ? `<div class="row">${tags}</div>` : ""}
+      `;
+      exp.appendChild(d);
+    });
+
+    // Education
+    const edu = el("eduItems");
+    (SITE.education || []).forEach(ed => {
+      const d = document.createElement("div");
+      d.className = "item";
+      d.innerHTML = `
+        <div class="item-top">
+          <div class="item-title">${ed.title || ""}</div>
+          <div class="item-meta">${ed.dates || ""}</div>
+        </div>
+        <div class="muted" style="margin-top:4px;">${ed.org || ""}</div>
+      `;
+      edu.appendChild(d);
+    });
+
+    // Skills
+    const sc = el("skillChips");
+    (SITE.skills || []).forEach(s => {
+      const chip = document.createElement("span");
+      chip.className = "chip";
+      chip.textContent = s;
+      sc.appendChild(chip);
+    });
+
+    // Languages
+    const lc = el("languageChips");
+    (SITE.languages || []).forEach(s => {
+      const chip = document.createElement("span");
+      chip.className = "chip";
+      chip.textContent = s;
+      lc.appendChild(chip);
+    });
+
+    // Publications
+    const pubs = el("pubItems");
+    (SITE.publications || []).forEach(p => {
+      const d = document.createElement("div");
+      d.className = "item";
+      const where = [p.venue, p.year].filter(Boolean).join(" · ");
+      const title = p.url && p.url !== "#"
+        ? `<a href="${safeLink(p.url)}" target="_blank" rel="noopener">${p.title || ""}</a>`
+        : `<span>${p.title || ""}</span>`;
+      const doi = p.doi ? `<div class="small" style="margin-top:6px;">DOI: ${p.doi}</div>` : "";
+      d.innerHTML = `
+        <div class="item-top">
+          <div class="item-title">${title}</div>
+          <div class="item-meta">${where}</div>
+        </div>
+        ${doi}
+      `;
+      pubs.appendChild(d);
+    });
+
+    // Abstracts
+    const abs = el("absItems");
+    if (!(SITE.abstracts || []).length){
+      abs.innerHTML = `<div class="item"><div class="muted">Add your conference abstracts in the SITE.abstracts list.</div></div>`;
+    } else {
+      (SITE.abstracts || []).forEach(a => {
+        const d = document.createElement("div");
+        d.className = "item";
+        const where = [a.venue, a.year].filter(Boolean).join(" · ");
+        const title = a.url && a.url !== "#"
+          ? `<a href="${safeLink(a.url)}" target="_blank" rel="noopener">${a.title || ""}</a>`
+          : `<span>${a.title || ""}</span>`;
+        d.innerHTML = `
+          <div class="item-top">
+            <div class="item-title">${title}</div>
+            <div class="item-meta">${where}</div>
+          </div>
+        `;
+        abs.appendChild(d);
+      });
+    }
+
+    // Memberships
+    const mem = el("membershipItems");
+    (SITE.memberships || []).forEach(m => {
+      const d = document.createElement("div");
+      d.className = "item";
+      const title = m.url
+        ? `<a href="${safeLink(m.url)}" target="_blank" rel="noopener">${m.title || ""}</a>`
+        : `<span>${m.title || ""}</span>`;
+      d.innerHTML = `
+        <div class="item-top">
+          <div class="item-title">${title}</div>
+          <div class="item-meta">${m.dates || ""}</div>
+        </div>
+        ${m.meta ? `<div class="muted" style="margin-top:6px;">${m.meta}</div>` : ""}
+      `;
+      mem.appendChild(d);
+    });
+
+    // Contact
+    el("contactNote").textContent = SITE.contact?.note || "";
+    const cb = el("contactBlocks");
+    const blocks = [];
+
+    if (SITE.contact?.email){
+      blocks.push(`
+        <div class="item">
+          <div class="item-top"><div class="item-title">Email</div><div class="item-meta"></div></div>
+          <div class="muted" style="margin-top:6px;"><a href="mailto:${SITE.contact.email}">${SITE.contact.email}</a></div>
+        </div>
+      `);
+    }
+    if (SITE.contact?.phone){
+      blocks.push(`
+        <div class="item">
+          <div class="item-top"><div class="item-title">Phone</div><div class="item-meta"></div></div>
+          <div class="muted" style="margin-top:6px;">${SITE.contact.phone}</div>
+        </div>
+      `);
+    }
+    if (SITE.orcidUrl){
+      blocks.push(`
+        <div class="item">
+          <div class="item-top"><div class="item-title">ORCID</div><div class="item-meta"></div></div>
+          <div class="muted" style="margin-top:6px;"><a href="${safeLink(SITE.orcidUrl)}" target="_blank" rel="noopener">${SITE.orcidUrl}</a></div>
+        </div>
+      `);
+    }
+    blocks.push(`
+      <div class="item">
+        <div class="item-top"><div class="item-title">Location</div><div class="item-meta"></div></div>
+        <div class="muted" style="margin-top:6px;">${SITE.contact?.location || SITE.location || ""}</div>
+      </div>
+    `);
+
+    cb.innerHTML = blocks.join("");
+  </script>
+</body>
+</html>
